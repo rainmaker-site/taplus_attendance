@@ -1,0 +1,2 @@
+class MstEmployees < ApplicationRecord
+end
