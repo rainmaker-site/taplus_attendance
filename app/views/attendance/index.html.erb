@@ -6,7 +6,7 @@
 
   <% @employees.each do |employee| %>
     <tr>
-      <td><%= employee.name %></td>
+      <td><%= link_to employee.name, 'regist/' + employee.id.to_s %></td>
     </tr>
   <% end %>
 </table>
