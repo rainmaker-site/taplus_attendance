@@ -1,4 +1,5 @@
 class AttendanceController < ApplicationController
-  def index
-  end
+    def index
+        @employees = MstEmployee.all
+    end
 end
