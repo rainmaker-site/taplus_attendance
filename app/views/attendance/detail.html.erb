@@ -1,0 +1,23 @@
+<h1><%= @employee %></h1>
+<h2><%= @year + '年' + @month + '月' %></h2>
+<table>
+  <tr>
+    <th>日付</th>
+    <th>始業時刻</th>
+    <th>終業時刻</th>
+    <th>休暇時間</th>
+    <th>就業時間</th>
+  </tr>
+
+  <% dt = @dt %>
+  <% while dt.month = @month do %>
+    <tr>
+      <td><%= dt.year + '年' + dt.month + '月' %></td>
+      <td>　</td>
+      <td>　</td>
+      <td>　</td>
+      <td>　</td>
+    </tr>
+    <% dt = dt + 1 %>
+  <% end %>
+</table>

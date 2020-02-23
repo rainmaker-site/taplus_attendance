@@ -1,0 +1,2 @@
+class SumWorkingHours < ApplicationRecord
+end

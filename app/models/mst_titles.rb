@@ -1,0 +1,2 @@
+class MstTitles < ApplicationRecord
+end
