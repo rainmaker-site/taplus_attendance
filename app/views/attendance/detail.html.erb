@@ -1,5 +1,6 @@
-<h1><%= @employee %></h1>
-<h2><%= @year + '年' + @month + '月' %></h2>
+<h1><%= @employee.name %></h1>
+<h2><%= @year.to_s + '年' + @month.to_s + '月' %></h2>
+<%= form_tag('/attendance', method: :get) do %>
 <table>
   <tr>
     <th>日付</th>
@@ -10,14 +11,19 @@
   </tr>
 
   <% dt = @dt %>
-  <% while dt.month = @month do %>
+  <% while dt.month == @month do %>
     <tr>
-      <td><%= dt.year + '年' + dt.month + '月' %></td>
-      <td>　</td>
-      <td>　</td>
+      <td><%= dt.year.to_s + '年' + dt.month.to_s + '月' + dt.day.to_s + '日' %></td>
+      <td>
+        <%= select_tag 'test', options_for_select(@hours) %>:<%= select_tag 'test', options_for_select(@minutes) %>
+      </td>
+      <td>
+        <%= select_tag 'test', options_for_select(@hours) %>:<%= select_tag 'test', options_for_select(@minutes) %>
+      </td>
       <td>　</td>
       <td>　</td>
     </tr>
     <% dt = dt + 1 %>
   <% end %>
 </table>
+<% end %>
